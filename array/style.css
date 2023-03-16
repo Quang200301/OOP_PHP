@@ -1,0 +1,30 @@
+div.container{
+    background:burlywood;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: fit-content;
+    padding: 10%;
+  
+}
+.lef-conten{
+    padding-left: 50%;
+}
+          
+.right-conten{
+    padding-left: -50%;
+}
+.kq{
+    text-align: center;
+}
+#nd{
+    width: 57%;
+    height: 50px;
+}
+#nd1{
+    width: 57%;
+   
+}
