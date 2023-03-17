@@ -1,3 +1,8 @@
+<?php
+   require 'connect.php';
+   ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,30 +21,41 @@
 </style>
 </head>
 <body>
+    <table border="1px">
+    <thead>
+        <tr>
+            <td>ID </td>
+            <td>Taikhoan</td>
+            <td>matkhau</td>
+            <td>ghichu</td>
+            <td>anh</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+
+    <tbody>
     <?php
-    $ketnoi=mysqli_connect('localhost','root','','user');
-    $sql="select*from thanhvien";
-    $result=mysqli_query($ketnoi,$sql)or die("câu truy vấn sai!");
-    echo"<table><tr><th>ma_tv</th><th>Tài khoản</th><th>Mật khẩu</th><th>Ghi chú</th><th>Avata</th><th>Hàn động</th></tr>";
-    $i=1;
-    while($row=mysqli_fetch_assoc($result))
-    {
-        echo "<tr>";
-        echo "<td>".$row['id_tk']."</td>";
-        echo "<td>".$row['name_tk']."</td>";
-        echo "<td>".$row['matkhau']."</td>";
-        echo"<td>".$row['ghichu']."</td>";
-        echo"<td>";
-        echo "<img src='".$row['avata']."'>";
-        echo "</td>";
-        echo "<td>";
-        echo "<a href ='text1.php?id=".$i."'>delete</a> ||"; 
-        echo "<a href ='themthanhvien.php?id=".$i."'>Add</a>"; 
-        echo "</td>";
-        
-        $i++;
-    }
-    echo "</table>";
+  
+    $sql="SELECT* FROM thanhvien";
+    $result=mysqli_query($conn,$sql)or die("câu truy vấn sai!");
+    while($row=mysqli_fetch_assoc($result)){
     ?>
+    <tr>
+        <td><?php echo $row['id_tk']; ?></td>
+        <td><?php echo $row['name_tk']; ?></td>
+        <td><?php echo $row['matkhau']; ?></td>
+        <td><?php echo $row['ghichu']; ?></td>
+        <td><img src=" <?php echo $row['avata']; ?>"  width="50px"width="50px"></td>
+        <td><a href="http://localhost/PHP_MYSQL/mysql_php/xoatv.php?id=<?php echo $row['id_tk'] ?>">xoa</a></td>
+    </tr>
+  
+    <?PHP
+    }
+   ?>
+    </tbody>
+    </table>
+   <a href="themthanhvien.php"> Thêm</a>
+
 </body>
+
 </html>

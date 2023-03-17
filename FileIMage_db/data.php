@@ -23,7 +23,7 @@
             <td><?php echo $row['ten']; ?></td>
             <td><?php echo $row['tuoi']; ?></td>
             <td>
-                <img src=" <?php echo $row['anh']; ?> " width="50px" width="50px">
+                <img src=" <?php echo $row['anh']; ?>"  width="50px"width="50px">
             </td>
             <td>
                 <a href="http://localhost/PHP_MYSQL/FileIMage_db/xoa.php?id=<?php echo $row['nv_id'] ?>">Xóa</a>
