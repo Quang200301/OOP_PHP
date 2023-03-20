@@ -9,18 +9,17 @@ if(isset($_POST['Login'])){
     // var_dump($row);
     // die;
     if($row){
-        header("location:showthanhvien.php");
+        // header("location:showthanhvien.php");
+        echo
+        "<script> alert('thanhcong')</script>";
 
     }
     else{
-        echo"saiii";
+        echo
+        "<script> alert('sai tài khoản')</script>";
     }
 
     }
- 
-  
-        
-    
 
 ?>
 
@@ -28,10 +27,20 @@ if(isset($_POST['Login'])){
     <link rel="stylesheet" href="stylelogin.css">
     <style>
         #name{
-            margin-left:34px
+            margin-left:34px;
+            border-radius: 30px;
+
+        }
+        #mk{
+            border-radius: 30px;
+        }
+        #Login{
+            border-radius: 30px;
         }
         #login{
-            margin-left:14%
+            margin-left:14%;
+            margin-top:16px;
+           
     
         }
     </style>
@@ -39,12 +48,12 @@ if(isset($_POST['Login'])){
     <div class="content">
 
     <form action="" method="post" enctype="multipart/form-data">
-        <h1>FORM</h1>
+        <h1 >Form Login</h1>
     <label for="">Tên:</label>
-    <input type="text" name="name" id="name"><br>
+    <input type="text" name="name" id="name"><br><br>
     <!-- <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
     <label for="">mật khẩu:</label>
-    <input type="text" name="mk"> <br><br>
+    <input type="text" name="mk" id="mk"> <br><br>
     <input type="submit" name="Login"  id="login"value="Login">
     <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
